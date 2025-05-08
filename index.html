@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema experto de plantas</title>
+    <style type="text/css">
+        
+        body{
+            font-family: 'Arial', sans-serif;
+            background: #22C1C3;
+            background: linear-gradient(0deg,rgb(34, 195, 123) 0%, rgb(191, 253, 45) 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .contenido{
+            display: flex;
+            flex-direction: column;
+            background-color: #def6d9;
+            border-radius: 20px;
+            align-content: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            max-width: 90%;
+            margin: 20px;
+        }
+        .pregunta{
+            margin-bottom: 20px; 
+            padding-bottom: 10px;
+        }
+        .quest{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        button{
+            font-weight: bold;
+            font-size: 15px;
+            width: 70%;
+            padding: 8px;
+            margin-bottom: 20px;
+            background: #22C1C3;
+            border-radius: 5px;
+            background: linear-gradient(90deg,rgb(34, 195, 98) 0%, rgb(97, 253, 45) 100%);
+            
+        }
+        button:hover{
+            background: linear-gradient(90deg, rgb(134, 225, 158) 0%, rgb(167, 253, 135) 100%);
+        }
+
+        .opciones{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 80%;
+            max-width: 400px; 
+            margin: 10px auto;
+            font-size: 14px;
+        }
+        
+
+        .opciones .radio {
+            flex: 1 1 auto;
+            text-align: center;
+            
+            }
+
+        .opciones .radio input {
+            display: none;
+        }
+
+        .opciones .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+            font-size: 15px;
+            font-weight: bold;
+
+        }
+
+        .opciones .radio input:checked + .name {
+             background-color: #fff;
+            font-weight: 600;
+        }
+        .opciones .radio input:hover + .name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+
+        .imagen-planta{
+            border-radius: 20px;
+            max-width: 500px;
+            width: 500px;
+            height: 500px;
+        }
+
+        
+    </style>
+
+
+
+</head>
+<body>
+    <div class="contenido">
+        <h1>Formulario para recomendar plantas</h1>
+        <form id="plantaForm">
+            <div class="pregunta">
+                <label class="quest">¿Qué tipo de luz tienes?</label>
+                <div class="opciones">
+                    <label class="radio"><input type="radio" name="luz" value="luz_indirecta" required> <span class="name">Luz indirecta </span></label>
+                    <label class="radio"><input type="radio" name="luz" value="luz_baja">  <span class="name">Luz baja</span></label>
+                    <label class="radio"><input type="radio" name="luz" value="luz_directa">  <span class="name">Luz directa</span></label>
+                    <label class="radio"><input type="radio" name="luz" value="luz_media" required>  <span class="name">Luz media</span></label>
+                    <label class="radio"><input type="radio" name="luz" value="semisombra">  <span class="name">Semi-sombra</span></label>
+                    <label class="radio"><input type="radio" name="luz" value="sombra">  <span class="name">Sombra</span></label>
+                  </div>
+            </div>
+
+            <div class="pregunta">
+                <label class="quest">¿Quieres una planta que necesite humedad alta?</label>
+                <div class="opciones">
+                    <label class="radio"><input type="radio" name="humedad" value="si" required><span class="name">Si</span></label>
+                    <label class="radio"><input type="radio" name="humedad" value="no"><span class="name">No</span></label>
+                  </div>
+            </div>
+
+            <div class="pregunta">
+                <label class="quest">¿Quieres una planta fácil de cuidar?</label>
+                <div class="opciones">
+                    <label class="radio"><input type="radio" name="cuidado" value="si" required><span class="name">Si</span></label>
+                    <label class="radio"><input type="radio" name="cuidado" value="no"><span class="name">No</span></label>
+                  </div>
+            </div>
+
+            <div class="pregunta">
+                <label class="quest">¿Tienes mucho o poco espacio? </label>
+                <div class="opciones">
+                    <label class="radio"><input type="radio" name="espacio" value="pequeno" required> <span class="name">Pequeño</span></label>
+                    <label class="radio"><input type="radio" name="espacio" value="mediano"> <span class="name">Mediano</span></label>
+                    <label class="radio"><input type="radio" name="espacio" value="grande"> <span class="name">Grande</span></label>
+                  </div>
+            </div>
+
+            <div class="pregunta">
+                <label class="quest">¿Debe ser segura para mascotas? </label>
+                <div class="opciones">
+                    <label class="radio"><input type="radio" name="mascota" value="si" required><span class="name">Si</span></label>
+                    <label class="radio"><input type="radio" name="mascota" value="no"><span class="name">No</span></label>
+                  </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="mensaje"></div>
+    </div>
+
+
+
+    <script>
+
+document.getElementById("plantaForm").addEventListener("submit", function(event){
+    event.preventDefault();        
+  
+    
+    const mensajeDiv = document.querySelector('.mensaje');
+    
+    const formValues = {
+        luz: document.querySelector('input[name="luz"]:checked')?.value,
+        humedad: document.querySelector('input[name="humedad"]:checked')?.value,
+        cuidado: document.querySelector('input[name="cuidado"]:checked')?.value,
+        espacio: document.querySelector('input[name="espacio"]:checked')?.value,
+        mascota: document.querySelector('input[name="mascota"]:checked')?.value
+    };
+ 
+
+
+    fetch('http://localhost:8080/recomendar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formValues)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if(data.planta) {
+            const nombrePlanta = data.planta;
+            const nombreFormateado = nombrePlanta.replace(/_/g, ' ');
+            const img = document.createElement('img');
+            img.alt = nombreFormateado;
+            img.className = 'imagen-planta'; 
+            img.src = `img/${nombrePlanta}.jpg`;
+           
+            
+            
+            mensajeDiv.innerHTML = `
+                <h2>Planta recomendada:</h2>
+                <div class="planta-recomendada">
+                    <h3>${nombreFormateado}</h3>
+                </div>`;
+            
+            document.querySelector('.planta-recomendada').appendChild(img);
+
+            mostrarCaracteristicas(nombrePlanta)
+        } else {
+            throw new Error('No se encontraron plantas que coincidan');
+        }
+    })
+    .catch(error => {
+        console.error('Error en la solicitud:', error);
+        mensajeDiv.innerHTML = `
+            <p>No se encontraron plantas que coincidan con tus criterios.</p>
+            `;
+    });
+
+
+
+
+
+});
+
+
+function mostrarCaracteristicas(planta) {
+    fetch('http://localhost:8080/caracteristicas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({planta: planta})
+    })
+    .then(response => response.json())
+    .then(data => {
+        const caracteristicasHTML = `
+            <div class="caracteristicas">
+                <h4>Características:</h4>
+                <p><strong>Nombre científico:</strong> ${data.nombreCientifico || 'No disponible'}</p>
+                <p><strong>Riego:</strong> ${data.cantidadDeRiego} (${data.frecuenciaDeriego})</p>
+                <p><strong>Espacio necesario:</strong> ${data.espacioDisponible}</p>
+                <p><strong>Facilidad de cuidado:</strong> ${data.facilCuidado === 'si' ? 'Fácil' : 'Difícil'}</p>
+                <p><strong>Segura para mascotas:</strong> ${data.seguraParaMascotas === 'si' ? 'Sí' : 'No'}</p>
+                <p><strong>Tipo de luz:</strong> ${data.luz.replace(/_/g, ' ')}</p>
+                <p><strong>Humedad requerida:</strong> ${data.humedad === 'si' ? 'Alta' : 'Baja'}</p>
+                <p><strong>Temperatura ideal:</strong> ${data.temperatura.replace('_', ' ')}</p>
+                <p><strong>Tipo de fertilizante:</strong> ${data.tipoFertilizante.replace(/_/g, ' ')}</p>
+                <p><strong>Frecuencia de fertilización:</strong> ${data.frecuenciaFertilizacion.replace(/_/g, ' ')}</p>
+            </div>
+        `;
+        
+        document.querySelector('.planta-recomendada').insertAdjacentHTML('beforeend', caracteristicasHTML);
+        document.getElementById('verCaracteristicas').style.display = 'none';
+    })
+    .catch(error => {
+        console.error('Error al obtener características:', error);
+        
+    });
+}
+
+
+</script>
+</body>
+</html>
