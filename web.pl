@@ -29,16 +29,23 @@ recomendar_planta_handler(Request) :-
     (DictIn.cuidado = "si" -> Facil = si ; Facil = no),
     atom_string(Espacio, DictIn.espacio),
     (DictIn.mascota = "si" -> Mascota = si ; Mascota = no),
-    
-    (   planta(Planta),
-        luz(Planta, Luz),
-        humedad(Planta, Humedad),
-        facilCuidado(Planta, Facil),
-        espacioDisponible(Planta, Espacio),
-        seguraParaMascotas(Planta, Mascota)
-    ->  reply_json_dict(_{planta: Planta})
+
+    findall(Planta,
+        (
+            planta(Planta),
+            luz(Planta, Luz),
+            humedad(Planta, Humedad),
+            facilCuidado(Planta, Facil),
+            espacioDisponible(Planta, Espacio),
+            seguraParaMascotas(Planta, Mascota)
+        ),
+        Plantas
+    ),
+    (   Plantas \= [] 
+    ->  reply_json_dict(_{plantas: Plantas})
     ;   reply_json_dict(_{error: "No se encontraron plantas"}, [status(404)])
     ).
+
 
 
 % Manejador de características
@@ -60,7 +67,8 @@ caracteristicas_handler(Request) :-
             humedad: Humedad,
             temperatura: Temp,
             tipoFertilizante: Fertilizante,
-            frecuenciaFertilizacion: FrecFert
+            frecuenciaFertilizacion: FrecFert,
+            cantidadFertilizante: CantFert
         },
         (
             nombreCientifico(Planta, Cientifico),
@@ -73,11 +81,22 @@ caracteristicas_handler(Request) :-
             humedad(Planta, Humedad),
             temperatura(Planta, Temp),
             tipoFertilizante(Planta, Fertilizante),
-            frecuenciaFertilizacion(Planta, FrecFert)
+            frecuenciaFertilizacion(Planta, FrecFert),
+            cantidadFertilizante(Planta, CantFert)
         ),
-        [Result]
+        ResultList
     ),
-    reply_json_dict(Result).
+    ( ResultList = [Result] 
+    -> reply_json_dict(Result)
+    ;  reply_json_dict(_{error: "No se encontraron características"}, [status(404)])
+    ).
 
+% Ruta específica para servir el favicon desde /img/favicon.ico
+:- http_handler('/favicon.ico', serve_favicon, []).
+
+serve_favicon(Request) :-
+    http_reply_file('img/favicon.ico', [], Request).
+
+:- http_handler('/script.js', http_reply_file('script.js', [mimetype('text/javascript')]), []).
 
 :- initialization(server(8080)).

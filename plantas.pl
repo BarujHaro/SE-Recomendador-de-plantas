@@ -33,26 +33,26 @@ cantidadDeRiego(pothos, moderado).
 cantidadDeRiego(rosa_del_desierto, moderado).
 cantidadDeRiego(sansevieria, poco).
 
-cantidadFertilizante(aloe_vera, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(arbol_de_caucho, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(bromelia, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(cactus, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(dracaena, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(espatifilo, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(girasol, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(helecho_de_boston, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(helecho_fern, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(hortensia, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(lucky_bamboo, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(orquidea, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(palmera_cola_de_caballo, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(palmera_de_salon, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(philodendron, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(planta_arana, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(planta_ZZ, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(pothos, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(rosa_del_desierto, 'según las indicaciones de la etiqueta').
-cantidadFertilizante(sansevieria, 'según las indicaciones de la etiqueta').
+cantidadFertilizante(aloe_vera, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(arbol_de_caucho, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(bromelia, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(cactus, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(dracaena, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(espatifilo, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(girasol, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(helecho_de_boston, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(helecho_fern, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(hortensia, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(lucky_bamboo, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(orquidea, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(palmera_cola_de_caballo, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(palmera_de_salon, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(philodendron, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(planta_arana, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(planta_ZZ, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(pothos, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(rosa_del_desierto, 'segun las indicaciones de la etiqueta').
+cantidadFertilizante(sansevieria, 'segun las indicaciones de la etiqueta').
 
 
 espacioDisponible(aloe_vera, pequeno).
